@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Slim Studio",
+    "slug": "slim-studio",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tyrelchambers.slimstudio",
+      "buildNumber": "1.0.0",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId":  "365092619848-k8n2c9a933n8h3c7fchjl5idjc58644m.apps.googleusercontent.com"
+        }
+      }
+    },
+    "android": {
+      "package": "com.tyrelchambers.slimstudio",
+      "versionCode": 1
+    }
+  }
+}
