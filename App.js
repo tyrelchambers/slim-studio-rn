@@ -12,6 +12,7 @@ import SignupScreen from './screens/SignupScreen';
 import {Provider } from 'mobx-react'
 import UserStore from './stores/UserStore'
 import Colors from './constants/Colors';
+import VideoScreen from './screens/VideoScreen';
 
 const Stack = createStackNavigator();
 
@@ -60,6 +61,7 @@ export default function App(props) {
           <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
             <Stack.Navigator headerMode="none">
               <Stack.Screen name="Google" component={SignupScreen} />
+              <Stack.Screen name="Video" component={VideoScreen} />
               <Stack.Screen name="Root" component={BottomTabNavigator} />
             </Stack.Navigator>
           </NavigationContainer>

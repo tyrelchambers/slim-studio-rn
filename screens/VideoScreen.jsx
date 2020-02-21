@@ -1,21 +1,18 @@
 import React from 'react'
-import { View, Text, Image} from 'react-native'
-import { StyleSheet } from 'react-native'
-import Stat from './Stat'
-import TabBarIcon from './TabBarIcon'
-import colours from '../constants/Colors';
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { View, Text, StyleSheet, Image } from 'react-native'
+import Stat from '../components/Stat'
+import colours from '../constants/Colors'
+import TabBarIcon from '../components/TabBarIcon'
 
-const VideoWidget = ({navigation}) => {
+const VideoScreen = () => {
   return (
-    <TouchableOpacity
-      style={styles.video}
-      onPress={() => navigation.navigate("Video")}
-    >
+    <View style={styles.wrapper}>
       <Image 
         style={styles.thumbnail}
         source={{uri: 'https://images.unsplash.com/photo-1581806760632-eacab2d0b84a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'}}
       />
+      <Text style={styles.title}>Seven True Stalker Stories</Text>
+
       <View style={styles.statsWrapper}>
         <View style={{
           display: 'flex',
@@ -71,14 +68,16 @@ const VideoWidget = ({navigation}) => {
           />             
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
+
 const styles = StyleSheet.create({
+  wrapper: {
+    marginTop: 30
+  },
   statsWrapper: {
-    position: 'absolute',
-    bottom: 0,
     padding: 10,
     margin: 10,
     backgroundColor: 'rgba(255,255,255, 0.9)',
@@ -90,17 +89,20 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   thumbnail: {
-    width: '100%',
-    height: '100%',
+    width: '95%',
     borderRadius: 20,
-  },
-  video: {
+    marginHorizontal: 10,
     height: 205,
     borderRadius: 20,
     marginVertical: 10,
-  
-    position: 'relative'
+
+  },
+  title: {
+    fontSize: 40,
+    margin: 10,
+    fontFamily: 'muli-bold'
   }
 })
 
-export default VideoWidget
+
+export default VideoScreen

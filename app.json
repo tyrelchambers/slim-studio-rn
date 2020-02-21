@@ -30,13 +30,14 @@
       "buildNumber": "1.0.0",
       "config": {
         "googleSignIn": {
-          "reservedClientId":  "365092619848-k8n2c9a933n8h3c7fchjl5idjc58644m.apps.googleusercontent.com"
+          "reservedClientId": "365092619848-k8n2c9a933n8h3c7fchjl5idjc58644m.apps.googleusercontent.com"
         }
       }
     },
     "android": {
       "package": "com.tyrelchambers.slimstudio",
       "versionCode": 1
-    }
+    },
+    "description": ""
   }
 }

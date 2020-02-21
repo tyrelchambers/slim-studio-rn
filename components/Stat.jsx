@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   text: {
-    fontWeight: '600'
+    fontFamily: 'muli-bold'
   }
 })
 export default Stat

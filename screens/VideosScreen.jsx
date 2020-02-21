@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { FlatList } from 'react-native-gesture-handler'
+import { FlatList, ScrollView } from 'react-native-gesture-handler'
 import VideoWidget from '../components/VideoWidget'
 import { StyleSheet } from 'react-native'
+import Colors from '../constants/Colors'
 
 const VideosScreen = () => {
   const DATA = [
@@ -17,20 +18,35 @@ const VideosScreen = () => {
     }
   ]
   return (
-    <FlatList 
-      data={DATA}
-      contentContainerStyle={styles.wrapper}
-      renderItem={({item}) => item.el}
-    />
+    <View
+      style={styles.wrapper}
+    >
+      <Text
+        style={{
+          fontSize: 28,
+          padding:10,
+          color: Colors.secondary,
+          fontFamily: 'muli-black'
+        }}
+      >All Videos</Text>
+      <FlatList 
+        data={DATA}
+        renderItem={({item}) => item.el}
+        contentContainerStyle={{
+          padding: 10
+        }}
+      />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    padding: 10,
-    marginTop: 20
-  }
+    marginTop: 60,
+    marginBottom: 110
+  },
+
 })
 
 export default VideosScreen

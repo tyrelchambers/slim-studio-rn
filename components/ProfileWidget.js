@@ -42,12 +42,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: "700",
     color: colours.secondary,
-    marginBottom: 5
+    marginBottom: 5,
+    fontFamily: 'muli-bold'
   },
   subtitle: {
-    color: colours.secondary
+    color: colours.secondary,
+    fontFamily: 'muli-regular'
   }
 })
 

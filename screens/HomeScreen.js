@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { View, Text, StyleSheet, Image, RefreshControl } from 'react-native'
 import {inject, observer} from 'mobx-react'
 import colours from '../constants/Colors';
@@ -10,7 +10,7 @@ const HomeScreen = inject("store")(observer(({navigation, store}) => {
   const [refreshing, setRefreshing] = React.useState(false);
 
   useEffect(() => {
-    store.getChannelInfo()
+    //store.getChannelInfo()
   }, [])
 
   const onRefresh = React.useCallback(() => {
@@ -53,15 +53,22 @@ const HomeScreen = inject("store")(observer(({navigation, store}) => {
         </View>
       </View>
 
-      <View style={{padding: 10, paddingBottom: 40}}>
-        <VideoWidget/>
-        <VideoWidget/>
-        <VideoWidget/>
+      <View style={{padding: 10, marginBottom: 130, marginTop: 20}}>
+        <VideoWidget
+          navigation={navigation}
+        />
+        <VideoWidget
+          navigation={navigation}
+        />
+        <VideoWidget
+          navigation={navigation}
+        />
         <Text 
           style={{
             textAlign: 'center',
             marginVertical: 10,
-            color: colours.tintColor
+            color: colours.tintColor,
+            fontFamily: 'muli-regular'
           }}
           onPress={() => navigation.navigate("Videos")}
         >View all videos</Text>
@@ -108,11 +115,13 @@ const styles = StyleSheet.create({
   },
   num: {
     color: colours.secondary,
-    fontWeight: '800',
+    fontFamily: 'muli-black'
+
   },
   label: {
     marginLeft: 5,
-    opacity: 0.6
+    opacity: 0.6,
+    fontFamily: 'muli-regular'
   },
   stat: {
     display: 'flex',

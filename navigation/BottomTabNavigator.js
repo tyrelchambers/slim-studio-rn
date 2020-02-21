@@ -14,12 +14,32 @@ export default function BottomTabNavigator({ navigation, route }) {
   // https://reactnavigation.org/docs/en/screen-options-resolution.html
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator 
+      initialRouteName={INITIAL_ROUTE_NAME} 
+      tabBarOptions={{
+        showLabel: false,
+        style: {
+          borderRadius: 20,
+          width: '95%',
+          marginHorizontal: 10,
+          height: 50,
+          marginBottom: 30,
+          paddingBottom: 0,
+          shadowColor: 'black',
+          shadowOpacity: 0.2,
+          shadowOffset: {
+            height: 3
+          },
+          shadowRadius: 20,
+          position: 'absolute'
+        },
+      }}
+    >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ focused }) => <TabBarIcon iconType="ionicons" focused={focused} size={20} name="md-home" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon iconType="ionicons" focused={focused} size={25} name="md-home" />,
         }}
       />
 
@@ -27,7 +47,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Videos"
         component={VideosScreen}
         options={{
-          tabBarIcon: ({ focused }) => <TabBarIcon iconType="ionicons" focused={focused} size={20} name="ios-play" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon iconType="ionicons" focused={focused} size={25} name="ios-play" />,
         }}
       />
 
@@ -37,6 +57,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon iconType="material" focused={focused} size={20} name="chat-bubble" />,
         }}
+     
       />
       
     </BottomTab.Navigator>
